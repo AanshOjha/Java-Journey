@@ -2,22 +2,15 @@ package LeetCode.DailyStreak;
 
 public class PenaltyForShop {
     static public int bestClosingTime(String customers) {
-        char[] chars = customers.toCharArray();
-        int bestTime = 0, penaltyDiff = 0;
-
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == 'Y') {
-                penaltyDiff--;
-            } else {
-                penaltyDiff++;
-            }
-
-            if (penaltyDiff < 0) {
-                penaltyDiff = 0;
-                bestTime = i + 1;
+        int max_score = 0, score = 0, best_hour = -1;
+        for(int i = 0; i < customers.length(); ++i) {
+            score += (customers.charAt(i) == 'Y') ? 1 : -1;
+            if(score > max_score) {
+                max_score = score;
+                best_hour = i;
             }
         }
-        return bestTime;
+        return best_hour + 1;
     }
 
     public static void main(String[] args) {
