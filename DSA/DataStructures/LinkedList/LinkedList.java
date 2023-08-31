@@ -180,16 +180,67 @@ public class LinkedList {
     }
 
     public void reverse() {
-        Node temp = head;
-        head = tail;
-        tail = temp;
-        Node after = temp.next;
-        Node before = null;
-        for (int i =0; i < length; i++) {
-            after = temp.next;
-            temp.next = before;
-            before = temp;
-            temp = after;
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
+        head = prev;
+    }
+
+    public Node middleNode() {
+        // For empty ListNode
+        if (head == null) {
+            return null;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public boolean isPalindrome() {
+        if (head == null || head.next ==null){
+            return true;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node middleNode = slow;
+        // reverse all after the midnode
+        Node current = middleNode;
+        Node previous = null;
+        Node next;
+        while (current != null){
+            next = current.next;
+            current.next = previous ;
+            previous = current ;
+            current = next;
+        }
+        Node left = head;
+        Node right = previous;
+
+        while (right !=null){
+            if (right.value != left.value){
+                return false;
+            }
+            right = right.next;
+            left = left.next;
+        }
+        return true;
     }
 }
