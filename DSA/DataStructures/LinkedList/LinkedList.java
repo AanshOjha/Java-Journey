@@ -168,9 +168,9 @@ public class LinkedList {
     public Node remove(int index) {
         if (index < 0 || index > length) {
             return null;
-        } else if(index ==0) {
+        } else if (index == 0) {
             removeFirst();
-        } else if(index == length) {
+        } else if (index == length) {
             removeLast();
         }
         Node temp = get(index - 1);     // Assigning temp as preceding element
@@ -180,21 +180,21 @@ public class LinkedList {
     }
 
     public void reverse() {
-        Node prev = null;
-        Node curr = head;
+        Node previous = null;
+        Node current = head;
         Node next;
 
-        while (curr != null) {
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
         }
-        head = prev;
+        head = previous;
     }
 
     public Node middleNode() {
-        // For empty ListNode
+        // For empty Node
         if (head == null) {
             return null;
         }
@@ -242,5 +242,50 @@ public class LinkedList {
             left = left.next;
         }
         return true;
+    }
+
+    // =================================================================================================
+
+    // Of LeetCode. add Node head in the arguments
+    public Node remove2(int val) {
+        // Handle cases where the list starts with nodes with the target value
+        while (head != null && head.value == val) {
+            head = head.next;
+        }
+
+        Node current = head;
+        Node previous = null;
+
+        while (current != null) {
+            if (current.value == val) {
+                if (previous != null) {
+                    previous.next = current.next;
+                }
+            } else {
+                previous = current;
+            }
+            current = current.next;
+        }
+
+        return head;
+    }
+
+    // Exact Leetcode not applicable in this file
+    public Node  deleteDuplicates(Node head) {
+
+     Node current = head;
+
+        while (current != null && current.next != null) {
+            // if next node value is similar to current node
+            // skip next node and update current.next
+
+            if (current.value == current.next.value) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+
+        return head;
     }
 }
