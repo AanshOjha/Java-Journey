@@ -1,12 +1,12 @@
 package LeetCode.LinkedList;
 
-import DSA.DataStructures.LinkedList.LinkedList;
+
 import LeetCode.ListNode;
 
 public class RemoveNode {
-    public ListNode remove2(int val) {
+    public ListNode remove2(ListNode head, int val) {
         // Handle cases where the list starts with nodes with the target value
-        while (head != null && head.value == val) {
+        while (head != null && head.val == val) {
             head = head.next;
         }
 
@@ -14,7 +14,7 @@ public class RemoveNode {
         ListNode previous = null;
 
         while (current != null) {
-            if (current.value == val) {
+            if (current.val == val) {
                 if (previous != null) {
                     previous.next = current.next;
                 }
@@ -27,3 +27,10 @@ public class RemoveNode {
         return head;
     }
 }
+//class ListNode {
+//    public int val;
+//    public LeetCode.ListNode next;
+//    ListNode() {}
+//    public ListNode(int val) { this.val = val; }
+//    public ListNode(int val, LeetCode.ListNode next) { this.val = val; this.next = next; }
+//}
