@@ -10,9 +10,10 @@ public class NthFibonacci {
     // As this is direct formula so can find 50th even 100th fibo number!
     static int fiboFormula(int n) {
         return (int) (
-                (Math.pow(((1 + Math.sqrt(5)) / 2), n) //
+                (Math.pow(((1 + Math.sqrt(5)) / 2), n)
                         - Math.pow(((1 - Math.sqrt(5)) / 2), n)
-                ) / Math.sqrt(5));
+                ) / Math.sqrt(5)
+        );
     }
 
     // This has time complexity of around 2 to power N
