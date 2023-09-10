@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion.Level1;
 
 public class SumToN {
     public static void main(String[] args) {

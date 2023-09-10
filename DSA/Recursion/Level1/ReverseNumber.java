@@ -1,4 +1,4 @@
-package DSA.Recursion;
+package DSA.Recursion.Level1;
 
 public class ReverseNumber {
     static int reverse(int n) {
