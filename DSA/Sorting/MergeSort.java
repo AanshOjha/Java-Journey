@@ -1,5 +1,7 @@
 package DSA.Sorting;
 
+import java.util.Arrays;
+
 public class MergeSort {
 
     public static void merge(int[] arr, int start, int mid, int end) {
@@ -51,9 +53,6 @@ public class MergeSort {
 
         mergeSort(arr, 0, n - 1);
 
-        System.out.println("Sorted array:");
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+        System.out.println(Arrays.toString(arr));
     }
 }

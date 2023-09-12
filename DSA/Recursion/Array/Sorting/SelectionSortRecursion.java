@@ -22,6 +22,8 @@ public class SelectionSortRecursion {
         }
     }
 
+    // a quick brown fox jumps over the lazy dog.
+
     public static void main(String[] args) {
         int[] arr = {5,7,3,2,4,1};
         selection(arr, arr.length, 0, 0);
