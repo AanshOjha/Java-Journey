@@ -55,9 +55,7 @@ public class MergeSortRecursion {
             k++;
         }
 
-        for (int l = 0; l < mix.length; l++) {
-            arr[start+l] = mix[l];
-        }
+        System.arraycopy(mix, 0, arr, start, mix.length);
     }
 
 
