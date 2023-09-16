@@ -40,7 +40,7 @@ public class MergeSortRecursion {
             k++;
         }
 
-        // it may be possible that one of the arrays is not complete    arr1 = [
+        // it may be possible that one of the arrays is completed other still has element in it
         // Means after merging, some elements left so,
         // copy the remaining elements
         while (i < mid) {
