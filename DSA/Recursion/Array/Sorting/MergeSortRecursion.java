@@ -16,18 +16,23 @@ public class MergeSortRecursion {
 
         int mid = (start + end) / 2;
 
+        // Keep splitting array into half till one element left
         mergeSortInPlace(arr, start, mid);      // For first half of array
         mergeSortInPlace(arr, mid, end);        // After first half, time for second half
 
+        // Base condition met then
         mergeInPlace(arr, start, mid, end);
     }
 
     private static void mergeInPlace(int[] arr, int start, int mid, int end) {
+
+        // Add sorted element to new array mix[] then copy mix[] to original arr[]
+
         int[] mix = new int[end - start];
 
-        int i = start;
-        int j = mid;
-        int k = 0;
+        int i = start;  // i goes from start to mid - 1
+        int j = mid;    // j goes from mid to end - 1
+        int k = 0;      // pointer for new array mix[]
 
         while (i < mid && j < end) {
             if (arr[i] < arr[j]) {
