@@ -2,7 +2,7 @@ package DSA.Recursion;
 
 public class Main {
     public static void main(String[] args) {
-        concept(5);
+        message(5);
 
     }
 
