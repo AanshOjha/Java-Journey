@@ -1,22 +1,24 @@
 package LeetCode.Recursion;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class KeypadCombination {
     public static void main(String[] args) {
-        System.out.println(letterCombinations("78"));
+        System.out.println(letterCombinations("23"));
     }
 
     static public List<String> letterCombinations(String digits) {
-        ArrayList<String> list=new ArrayList<>();
-        if(digits.isEmpty()) return list;
+        if(digits.isEmpty()) {
+            return Collections.emptyList();
+        }
 
         return phonePad("",digits);
     }
     public static List<String> phonePad(String p, String up) {
         if(up.isEmpty()) {
-            ArrayList<String> list=new ArrayList<>();
+            ArrayList<String> list = new ArrayList<>();
             list.add(p);
             return list;
         }
