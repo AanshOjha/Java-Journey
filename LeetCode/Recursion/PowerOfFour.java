@@ -16,6 +16,6 @@ public class PowerOfFour {
 
     public static void main(String[] args) {
         System.out.println(isPowerOfFour(16));
-        System.out.println(isPowerOfFour(25));
+        System.out.println(isPowerOfFour(5));
     }
 }
