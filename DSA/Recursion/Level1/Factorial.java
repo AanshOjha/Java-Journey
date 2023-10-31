@@ -2,7 +2,7 @@ package DSA.Recursion.Level1;
 
 public class Factorial {
     public static void main(String[] args) {
-        System.out.println(recursiveFactorial(5));
+        System.out.println(recursiveFactorial(3));
         System.out.println(iterativeFactorial(5));
     }
 
