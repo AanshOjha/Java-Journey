@@ -15,12 +15,13 @@ public class LastMomentAllAntsFallOut {
         if (left.length == 0)
             totalDistanceLeft = 0;
         else
+            // Get the farthest position of left going ant
             totalDistanceLeft = Arrays.stream(left).max().getAsInt();
         if (right.length == 0)
             totalDistanceRight = n;
         else
+            // Get the farthest position of right going ant
             totalDistanceRight = Arrays.stream(right).min().getAsInt();
         return Math.max(totalDistanceLeft, n-totalDistanceRight);
-
     }
 }
